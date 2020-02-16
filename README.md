@@ -12,13 +12,15 @@
 
 <h3>Установка</h3>
 1)Изменить название сервиса с "com.google.chrome.example.ech" на тот, который необходим в файлах:
-<br/>       a) linux_install_host.sh
-<br/>       b) manifest_service_linux.json
-<br/>       c) manifest_service_win.json
-<br/>       d) regedit_register.bat
-<br/>       e) regedit_un_register.bat
-<br/>       f) ServiceApp/js/background.js
-<br/>       g) ServiceApp/js/content.js
+<pre>
+       a) linux_install_host.sh
+       b) manifest_service_linux.json
+       c) manifest_service_win.json
+       d) regedit_register.bat
+       e) regedit_un_register.bat
+       f) ServiceApp/js/background.js
+       g) ServiceApp/js/content.js
+</pre>
 
 2) Загружаем плагин из каталога ServiceApp
 3) Запускаем под Windows файл regedit_register.bat 
