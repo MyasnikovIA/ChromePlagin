@@ -29,7 +29,6 @@ def sendMessage(encodedMessage):
 def send(encodedMessage):
     sendMessage(encodeMessage(encodedMessage))
 
-
 count_mesage = 0
 while True:
     receivedMessage = getMessage()
@@ -49,9 +48,9 @@ while True:
         call(["notepad.exe"])
     if receivedMessage["message"] == "calc":
         call(["calc.exe"])
-        response["eval"] = "alert('Message From Python')"
+        response["eval"] = "alert('Message From Python')"  #  Запуск JS кода
     if "cmd" in receivedMessage:
-        response["shell"] = call(receivedMessage["cmd"])
+        response["shell"] = call(receivedMessage["cmd"]) # не работает
     response["response"] = count_mesage
     response["host"] = host
     response["id"] = id
