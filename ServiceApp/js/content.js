@@ -33,7 +33,7 @@
             if (port1 != null) {
                 delete event.data['MessageToPython']
                 try{
-                   port1.postMessage(event.data); // отправка сообщения в Python из JavaScript
+                 //   port1.postMessage(event.data); // отправка сообщения в Python из JavaScript
                 }catch(err) {
                    port1 = null;
                    console.log("Error:",err.message);

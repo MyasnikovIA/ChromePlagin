@@ -47,6 +47,24 @@ class BarsPyAdapter {
         var loc = '' + window.location;
         window.postMessage({'id': id, "host": this.host, "message": action, "MessageToPython": 1, 'location': loc}, '*')
     }
+
+
+
+    print(action, callbackFunction) {
+        var id = this._genId();
+        if (callbackFunction == undefined) {
+            callbackFunction = null;
+        }
+        var message = {
+            'id': id,
+            'message': {"host": this.host, "print": action, "MessageToPython": 1},
+            'callback': callbackFunction
+        };
+        globalQueryList.push(message)
+        var loc = '' + window.location;
+        window.postMessage({'id': id, "host": this.host, "print": action, "MessageToPython": 1, 'location': loc}, '*')
+    }
+
     shell(action, callbackFunction) {
         var id = this._genId();
         if (callbackFunction == undefined) {
