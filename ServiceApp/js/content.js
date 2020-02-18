@@ -1,6 +1,7 @@
 ((window, browser) => {
-    const hostName = "com.google.chrome.example.echo";
-    console.info("Add BarsPy object");
+    const hostName = "ru.bars.group.plagin.barspy";
+    console.info("Add BarsPy object:");
+    console.info("Вывод на принтер:  BarsPy.send('[print]<h1>Привет Мир-HelloWorld</h1>')");
     var port1 = null;
     window.addEventListener("message", (event) => {
         if (port1 == null) {
@@ -33,7 +34,7 @@
             if (port1 != null) {
                 delete event.data['MessageToPython']
                 try{
-                 //   port1.postMessage(event.data); // отправка сообщения в Python из JavaScript
+                    port1.postMessage(event.data); // отправка сообщения в Python из JavaScript
                 }catch(err) {
                    port1 = null;
                    console.log("Error:",err.message);

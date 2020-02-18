@@ -1,5 +1,5 @@
 ((window, browser) => {
-    const hostName = "com.google.chrome.example.echo";
+    const hostName = "ru.bars.group.plagin.barspy";
     window.browser = browser;
     browser.runtime.onConnect.addListener(function (scriptPort) {
         var hostPort = browser.runtime.connectNative(hostName);

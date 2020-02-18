@@ -13,7 +13,7 @@ else
     TARGET_DIR="$HOME/.config/google-chrome/NativeMessagingHosts"
   fi
 fi
-HOST_NAME=com.google.chrome.example.echo
+HOST_NAME=ru.bars.group.plagin.barspy
 HOST_JSON=manifest_service_linux
 rm "$TARGET_DIR/$HOST_JSON.json"
 echo "Native messaging host $HOST_NAME has been uninstalled."

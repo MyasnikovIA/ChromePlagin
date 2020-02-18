@@ -1,6 +1,6 @@
 {
-  "name": "com.google.chrome.example.echo",
-  "description": "Chrome Native Messaging API Example Host",
+  "name": "ru.bars.group.plagin.barspy",
+  "description": "Плагин вывода на печать из JavaScript.",
   "path": "exec_host_service.bat",
   "type": "stdio",
   "allowed_origins": [

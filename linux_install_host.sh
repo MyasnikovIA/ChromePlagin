@@ -1,6 +1,6 @@
 #!/bin/sh
 
-HOST_NAME = com.google.chrome.example.echo
+HOST_NAME = ru.bars.group.plagin.barspy
 HOST_JSON = manifest_service_linux
 
 set -e

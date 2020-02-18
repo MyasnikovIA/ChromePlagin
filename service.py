@@ -1,5 +1,4 @@
 from subprocess import call
-import win32api
 import win32ui
 import win32con
 import win32print
@@ -7,9 +6,9 @@ import struct
 import sys
 import json
 import imgkit
-from PIL import Image, ImageWin
+from PIL import Image
+from PIL import ImageWin
 import tempfile
-
 
 
 def getMessage():
@@ -35,8 +34,6 @@ def sendMessage(encodedMessage):
 
 def send(encodedMessage):
     sendMessage(encodeMessage(encodedMessage))
-
-
 
 
 def print_image(printer_name, encoded_string=None):
@@ -102,8 +99,6 @@ while True:
     response = {}
     if receivedMessage["message"] == "exit":
         break
-    if receivedMessage["message"] == "1":
-        win32api.MessageBox(0, 'RUN', 'title')
     if receivedMessage["message"] == "notepad":
         call(["notepad.exe"])
     if receivedMessage["message"] == "calc":
@@ -113,10 +108,9 @@ while True:
         my_str = receivedMessage["message"].replace('[print]', '')
         filename = tempfile.mktemp(".png")
         options = {'width': 300, 'height': 100, 'encoding': 'UTF-8', }
-        htmlStr = """<!DOCTYPE html> <html> <head><meta charset="utf-8"><title>Тег META, атрибут charset</title></head><body>%s</body></html>""" % my_str
+        htmlStr = """<!DOCTYPE html> <html> <head><meta charset="utf-8"><title>Печать</title></head><body>%s</body></html>""" % my_str
         imgkit.from_string(htmlStr, filename, options=options)
         print_image(printer_name, filename)
-        response["eval"] = "alert('OK |%s')" % filename  # Запуск JS кода
     response["response"] = count_mesage
     response["host"] = host
     response["id"] = id
